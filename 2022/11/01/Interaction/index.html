@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <!-- Minima -->
+  <!-- Hexo theme created by @adisaktijrs -->
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+
+  
+  <title>Course3/IAP/Catch Me If You Can</title>
+  
+  <link rel="canonical" href="https://nexmaker-fab.github.io/2022zjude1-BIG5/2022/11/01/Interaction/">
+  
+  <meta name="description" content="Interacting with your “mouse” !Processing is a free graphical library and integrated development environment (IDE) built for the electronic arts, new ">
+  
+  
+  <meta name="author" content="BIG5">
+  
+  
+  
+  <meta property="og:site_name" content="BIG5" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Course3/IAP/Catch Me If You Can" />
+  
+  <meta property="og:description" content="Interacting with your “mouse” !Processing is a free graphical library and integrated development environment (IDE) built for the electronic arts, new ">
+  
+  <meta property="og:url" content="https://nexmaker-fab.github.io/2022zjude1-BIG5/2022/11/01/Interaction/" />
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Course3/IAP/Catch Me If You Can">
+  
+  <meta name="twitter:description" content="Interacting with your “mouse” !Processing is a free graphical library and integrated development environment (IDE) built for the electronic arts, new ">
+  
+  
+  
+  
+  <meta name="twitter:url" content="https://nexmaker-fab.github.io/2022zjude1-BIG5/2022/11/01/Interaction/" />
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Preload fonts
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="preload" href="/fonts/dm-serif-display-v4-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/inter-v2-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  
+<link rel="stylesheet" href="/2022zjude1-BIG5/css/normalize.css">
+
+  
+<link rel="stylesheet" href="/2022zjude1-BIG5/css/skeleton.css">
+
+  
+<link rel="stylesheet" href="/2022zjude1-BIG5/css/custom.css">
+
+  
+<link rel="stylesheet" href="/2022zjude1-BIG5/css/prism-dark.css">
+
+  
+<link rel="stylesheet" href="/2022zjude1-BIG5/css/prism-line-numbers.css">
+
+  <!-- User css -->
+  
+  
+<link rel="stylesheet" href="/2022zjude1-BIG5/css/user.css">
+
+  
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+  <!-- Custom Theme Color Style
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <style>
+  a:not(.icon) {
+    text-decoration-color: #0FA0CE;
+    background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 50%,
+      #0FA0CE 50%
+    );
+  }
+  blockquote {
+    border-left: 8px solid #0FA0CE;
+  }
+  .nanobar .bar {
+    background: #0FA0CE;
+  }
+  .button.button-primary:hover,
+  button.button-primary:hover,
+  input[type="submit"].button-primary:hover,
+  input[type="reset"].button-primary:hover,
+  input[type="button"].button-primary:hover,
+  .button.button-primary:focus,
+  button.button-primary:focus,
+  input[type="submit"].button-primary:focus,
+  input[type="reset"].button-primary:focus,
+  input[type="button"].button-primary:focus {
+    background-color: #0FA0CE;
+    border-color: #0FA0CE;
+  }
+  input[type="email"]:focus,
+  input[type="number"]:focus,
+  input[type="search"]:focus,
+  input[type="text"]:focus,
+  input[type="tel"]:focus,
+  input[type="url"]:focus,
+  input[type="password"]:focus,
+  textarea:focus,
+  select:focus {
+    border: 1px solid #0FA0CE;
+  }
+</style>
+
+  <!-- Google Analytics (With Privacy Settings On)
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  
+
+  
+  <script src="js/pic.min.js" defer></script>
+  
+
+  
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div>
+
+        <div class="row">
+  <div class="two columns" style="max-width: 50px">
+    <h1 class="mt-2 mode">
+      <div onclick=setDarkMode(true) id="darkBtn">🌑</div>
+      <div onclick=setDarkMode(false) id="lightBtn" class=hidden>☀️</div>
+      <script >
+        if (localStorage.getItem('preferredTheme') == 'dark') {
+          setDarkMode(true)
+        }
+        function setDarkMode(isDark) {
+          var darkBtn = document.getElementById('darkBtn')
+          var lightBtn = document.getElementById('lightBtn')
+          if (isDark) {
+            lightBtn.style.display = "block"
+            darkBtn.style.display = "none"
+            localStorage.setItem('preferredTheme', 'dark');
+          } else {
+            lightBtn.style.display = "none"
+            darkBtn.style.display = "block"
+            localStorage.removeItem('preferredTheme');
+          }
+          document.body.classList.toggle("darkmode");
+        }
+      </script>
+    </h1>
+  </div>
+
+  <div class="six columns ml-1">
+    <h1 class="mt-2">
+      Hi, Friends.
+    </h1>
+  </div>
+
+  <div class="twelve columns">
+    <div class="row">
+      <div class="nine columns left">
+        <a href="/2022zjude1-BIG5/">Home</a>
+        
+          
+          <a href="/2022zjude1-BIG5/about" class="ml">About Us</a>
+          
+        
+          
+          <a href="/2022zjude1-BIG5/archives" class="ml">All Works</a>
+          
+        
+          
+          <a href="/2022zjude1-BIG5/final" class="ml">Final Project</a>
+          
+        
+        
+      </div>
+    </div>
+    <hr style="margin-bottom: 2.6rem">
+  </div>
+</div>
+
+        <div class="trans">
+            <h1>Course3/IAP/Catch Me If You Can</h1>
+
+  <hr>
+<p><img src="https://raw.githubusercontent.com/zjudesign/PicGo/main/%E6%85%B5%E6%87%92%E7%8C%AB%E7%8C%AB%E6%95%88%E6%9E%9C%E7%9A%84%E5%89%AF%E6%9C%AC.gif"></p>
+<h2 id="Interacting-with-your-“mouse”"><a href="#Interacting-with-your-“mouse”" class="headerlink" title="Interacting with your “mouse” !"></a>Interacting with your “mouse” !</h2><p>Processing is a free graphical library and integrated development environment (IDE) built for the electronic arts, new media art, and visual design communities with the purpose of teaching non-programmers the fundamentals of computer programming in a visual context.</p>
+<p>In this article, we will show you how to write  basic processing code. </p>
+<p>We  find a interesting demo of processing application on Bilibili, uploaded by <a target="_blank" rel="noopener" href="https://space.bilibili.com/16061216">工程部老周</a>. A really cute cat.</p>
+<iframe width="600" height="315" src="//player.bilibili.com/player.html?aid=344676291&bvid=BV1dd4y1P7iQ&cid=808266059&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
+<p>Here is the video link:  <a target="_blank" rel="noopener" href="https://b23.tv/ESxZ1wf">https://b23.tv/ESxZ1wf</a></p>
+<p>And here is the code:</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">PImage</span> mao<span class="token punctuation">;</span>
+<span class="token class-name">PImage</span> zui<span class="token punctuation">;</span>
+<span class="token class-name">PImage</span> yu2<span class="token punctuation">;</span>
+<span class="token keyword">int</span> size <span class="token operator">=</span> <span class="token number">50</span><span class="token punctuation">;</span>
+<span class="token class-name">Eye</span> e1<span class="token punctuation">,</span>e2<span class="token punctuation">;</span>
+<span class="token keyword">void</span> <span class="token function">setup</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token function">size</span><span class="token punctuation">(</span><span class="token number">1440</span><span class="token punctuation">,</span> <span class="token number">810</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  mao <span class="token operator">=</span> <span class="token function">loadImage</span><span class="token punctuation">(</span><span class="token string">"maomao3.png"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  zui <span class="token operator">=</span> <span class="token function">loadImage</span><span class="token punctuation">(</span><span class="token string">"zui.png"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  yu2 <span class="token operator">=</span> <span class="token function">loadImage</span><span class="token punctuation">(</span><span class="token string">"yu2.png"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">void</span> <span class="token function">draw</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">float</span> <span class="token class-name">X</span> <span class="token operator">=</span> <span class="token function">map</span><span class="token punctuation">(</span>mouseX<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1440</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">float</span> <span class="token class-name">Y</span> <span class="token operator">=</span> <span class="token function">map</span><span class="token punctuation">(</span>mouseY<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">810</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  e1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Eye</span><span class="token punctuation">(</span> <span class="token number">620</span><span class="token operator">+</span><span class="token number">2</span><span class="token operator">*</span><span class="token class-name">X</span><span class="token punctuation">,</span>  <span class="token number">350</span><span class="token operator">+</span><span class="token number">2</span><span class="token operator">*</span><span class="token class-name">Y</span><span class="token punctuation">,</span> <span class="token number">80</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  e2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Eye</span><span class="token punctuation">(</span> <span class="token number">780</span><span class="token operator">+</span><span class="token number">2</span><span class="token operator">*</span><span class="token class-name">X</span><span class="token punctuation">,</span>  <span class="token number">350</span><span class="token operator">+</span><span class="token number">2</span><span class="token operator">*</span><span class="token class-name">Y</span><span class="token punctuation">,</span> <span class="token number">80</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">background</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">,</span> <span class="token number">215</span><span class="token punctuation">,</span> <span class="token number">113</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">imageMode</span><span class="token punctuation">(</span><span class="token constant">CENTER</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">image</span><span class="token punctuation">(</span>mao<span class="token punctuation">,</span> <span class="token number">700</span><span class="token operator">+</span><span class="token number">2</span><span class="token operator">*</span><span class="token class-name">X</span><span class="token punctuation">,</span><span class="token number">400</span><span class="token operator">+</span><span class="token number">2</span><span class="token operator">*</span><span class="token class-name">Y</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">image</span><span class="token punctuation">(</span>zui<span class="token punctuation">,</span> <span class="token number">700</span><span class="token operator">+</span><span class="token number">3</span><span class="token operator">*</span><span class="token class-name">X</span><span class="token punctuation">,</span> <span class="token number">450</span><span class="token operator">+</span><span class="token number">3</span><span class="token operator">*</span><span class="token class-name">Y</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  e1<span class="token punctuation">.</span><span class="token function">update</span><span class="token punctuation">(</span>mouseX<span class="token punctuation">,</span> mouseY<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  e2<span class="token punctuation">.</span><span class="token function">update</span><span class="token punctuation">(</span>mouseX<span class="token punctuation">,</span> mouseY<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  e1<span class="token punctuation">.</span><span class="token function">display</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  e2<span class="token punctuation">.</span><span class="token function">display</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">line</span><span class="token punctuation">(</span>mouseX<span class="token operator">-</span><span class="token number">40</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span>mouseX<span class="token operator">-</span><span class="token number">40</span><span class="token punctuation">,</span> mouseY<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">image</span><span class="token punctuation">(</span>yu2<span class="token punctuation">,</span>mouseX<span class="token punctuation">,</span> mouseY<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Eye</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">float</span> x<span class="token punctuation">,</span> y<span class="token punctuation">;</span>
+  <span class="token keyword">int</span> size<span class="token punctuation">;</span>
+  <span class="token keyword">float</span> angle <span class="token operator">=</span> <span class="token number">0.0</span><span class="token punctuation">;</span>
+
+  <span class="token class-name">Eye</span><span class="token punctuation">(</span><span class="token keyword">float</span> tx<span class="token punctuation">,</span> <span class="token keyword">float</span> ty<span class="token punctuation">,</span> <span class="token keyword">int</span> ts<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    x <span class="token operator">=</span> tx<span class="token punctuation">;</span>
+    y <span class="token operator">=</span> ty<span class="token punctuation">;</span>
+    size <span class="token operator">=</span> ts<span class="token punctuation">;</span>
+ <span class="token punctuation">&#125;</span>
+
+  <span class="token keyword">void</span> <span class="token function">update</span><span class="token punctuation">(</span><span class="token keyword">int</span> mx<span class="token punctuation">,</span> <span class="token keyword">int</span> my<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    angle <span class="token operator">=</span> <span class="token function">atan2</span><span class="token punctuation">(</span>my<span class="token operator">-</span>y<span class="token punctuation">,</span> mx<span class="token operator">-</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+
+  <span class="token keyword">void</span> <span class="token function">display</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token function">pushMatrix</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">translate</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">fill</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">strokeWeight</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">ellipse</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> size<span class="token punctuation">,</span> size<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">rotate</span><span class="token punctuation">(</span>angle<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">fill</span><span class="token punctuation">(</span><span class="token number">31</span><span class="token punctuation">,</span> <span class="token number">197</span><span class="token punctuation">,</span><span class="token number">255</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">ellipse</span><span class="token punctuation">(</span>size<span class="token operator">/</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> size<span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">,</span> size<span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">popMatrix</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<hr>
+<p>We wanted to achieve the effect of a cat lazily lying in a cat’s nest, watching mice scurrying around the house, so we replaced the code with our own image files. 👇</p>
+<p><img src="https://raw.githubusercontent.com/zjudesign/PicGo/main/mao.png"></p>
+<p>We modified the code and add comments, change the center of the cat picture, the size and position of the cat eyes, the size and position of the cat mouth and the background color.</p>
+<pre class="line-numbers language-Java" data-language="Java"><code class="language-Java">void draw() &#123;
+  float X &#x3D; map(mouseX, 0, 1440, -10, 10);
+  float Y &#x3D; map(mouseY, 0, 810, -10, 10);
+  &#x2F;&#x2F; 将鼠标坐标映射到该范围
+  e1 &#x3D; new Eye( 510+2*X,  258+2*Y, 45);
+  e2 &#x3D; new Eye( 600+2*X,  250+2*Y,45);
+  &#x2F;&#x2F;创建眼睛
+  background(255, 182, 185);
+  &#x2F;&#x2F; 设置背景
+  imageMode(CENTER);
+  &#x2F;&#x2F; 图片坐标点描点设置为中心
+  image(mao, 700+2*X,400+2*Y);
+  image(zui, 570+3*X, 300+3*Y);
+  &#x2F;&#x2F; 设置图片坐标，加上随鼠标移动偏移量
+  e1.update(mouseX, mouseY);
+  e2.update(mouseX, mouseY);
+  e1.display();
+  e2.display();
+  &#x2F;&#x2F;眼睛的显示
+  line(mouseX-40,0,mouseX-40, mouseY);
+  &#x2F;&#x2F;跟随鼠标的竖线
+  image(yu2,mouseX, mouseY);
+  &#x2F;&#x2F;老鼠随鼠标移动<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>Whoops，seems something wrong with the mouth😂.</p>
+<p><img src="https://raw.githubusercontent.com/zjudesign/PicGo/main/%E6%A0%BC%E6%A0%BC%E4%B8%8D%E5%85%A5%E7%9A%84%E5%98%B4%E5%B7%B4.gif"></p>
+<p>Trying to comment the mouth code.</p>
+<p><img src="https://raw.githubusercontent.com/zjudesign/PicGo/main/1.png"></p>
+<p><img src="https://raw.githubusercontent.com/zjudesign/PicGo/main/2.png"></p>
+<p><img src="https://raw.githubusercontent.com/zjudesign/PicGo/main/3.png"></p>
+<p>and Finally🎉!</p>
+<iframe width="600" height="315" src="https://www.youtube.com/embed/HmMACFz-5OM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<p><img src="https://raw.githubusercontent.com/zjudesign/PicGo/main/%E6%9C%80%E7%BB%88%E6%95%88%E6%9E%9C.gif"></p>
+<p>Final code:</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">PImage</span> mao<span class="token punctuation">;</span>
+<span class="token comment">//猫头猫图层</span>
+<span class="token comment">//PImage zui;</span>
+<span class="token comment">//猫嘴图层</span>
+<span class="token class-name">PImage</span> yu2<span class="token punctuation">;</span>
+<span class="token comment">//老鼠图层</span>
+<span class="token comment">// 两张图片的导入变量</span>
+<span class="token keyword">int</span> size <span class="token operator">=</span> <span class="token number">50</span><span class="token punctuation">;</span>
+<span class="token class-name">Eye</span> e1<span class="token punctuation">,</span>e2<span class="token punctuation">;</span>
+<span class="token comment">// 生成两只眼睛</span>
+<span class="token keyword">void</span> <span class="token function">setup</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token function">size</span><span class="token punctuation">(</span><span class="token number">1440</span><span class="token punctuation">,</span> <span class="token number">810</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">// 窗口大小</span>
+  mao <span class="token operator">=</span> <span class="token function">loadImage</span><span class="token punctuation">(</span><span class="token string">"mao.png"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">//zui = loadImage("zui.png");</span>
+  yu2 <span class="token operator">=</span> <span class="token function">loadImage</span><span class="token punctuation">(</span><span class="token string">"shu.png"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">//导入猫猫、嘴巴和老鼠</span>
+
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">void</span> <span class="token function">draw</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">float</span> <span class="token class-name">X</span> <span class="token operator">=</span> <span class="token function">map</span><span class="token punctuation">(</span>mouseX<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1440</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">float</span> <span class="token class-name">Y</span> <span class="token operator">=</span> <span class="token function">map</span><span class="token punctuation">(</span>mouseY<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">810</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">// 将鼠标坐标映射到该范围</span>
+  e1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Eye</span><span class="token punctuation">(</span> <span class="token number">510</span><span class="token operator">+</span><span class="token number">2</span><span class="token operator">*</span><span class="token class-name">X</span><span class="token punctuation">,</span>  <span class="token number">258</span><span class="token operator">+</span><span class="token number">2</span><span class="token operator">*</span><span class="token class-name">Y</span><span class="token punctuation">,</span> <span class="token number">45</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  e2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Eye</span><span class="token punctuation">(</span> <span class="token number">600</span><span class="token operator">+</span><span class="token number">2</span><span class="token operator">*</span><span class="token class-name">X</span><span class="token punctuation">,</span>  <span class="token number">250</span><span class="token operator">+</span><span class="token number">2</span><span class="token operator">*</span><span class="token class-name">Y</span><span class="token punctuation">,</span><span class="token number">45</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">//创建眼睛</span>
+  <span class="token function">background</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">,</span> <span class="token number">182</span><span class="token punctuation">,</span> <span class="token number">185</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">// 设置背景</span>
+  <span class="token function">imageMode</span><span class="token punctuation">(</span><span class="token constant">CENTER</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">// 图片坐标点描点设置为中心</span>
+  <span class="token function">image</span><span class="token punctuation">(</span>mao<span class="token punctuation">,</span> <span class="token number">700</span><span class="token operator">+</span><span class="token number">2</span><span class="token operator">*</span><span class="token class-name">X</span><span class="token punctuation">,</span><span class="token number">400</span><span class="token operator">+</span><span class="token number">2</span><span class="token operator">*</span><span class="token class-name">Y</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">//image(zui, 570+3*X, 300+3*Y);</span>
+  <span class="token comment">// 设置图片坐标，加上随鼠标移动偏移量</span>
+  e1<span class="token punctuation">.</span><span class="token function">update</span><span class="token punctuation">(</span>mouseX<span class="token punctuation">,</span> mouseY<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  e2<span class="token punctuation">.</span><span class="token function">update</span><span class="token punctuation">(</span>mouseX<span class="token punctuation">,</span> mouseY<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  e1<span class="token punctuation">.</span><span class="token function">display</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  e2<span class="token punctuation">.</span><span class="token function">display</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">//眼睛的显示</span>
+  <span class="token function">line</span><span class="token punctuation">(</span>mouseX<span class="token operator">-</span><span class="token number">40</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span>mouseX<span class="token operator">-</span><span class="token number">40</span><span class="token punctuation">,</span> mouseY<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">//跟随鼠标的竖线</span>
+  <span class="token function">image</span><span class="token punctuation">(</span>yu2<span class="token punctuation">,</span>mouseX<span class="token punctuation">,</span> mouseY<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">//老鼠随鼠标移动</span>
+
+
+<span class="token punctuation">&#125;</span>
+
+
+
+<span class="token keyword">class</span> <span class="token class-name">Eye</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">float</span> x<span class="token punctuation">,</span> y<span class="token punctuation">;</span>
+  <span class="token keyword">int</span> size<span class="token punctuation">;</span>
+  <span class="token keyword">float</span> angle <span class="token operator">=</span> <span class="token number">0.0</span><span class="token punctuation">;</span>
+
+  <span class="token class-name">Eye</span><span class="token punctuation">(</span><span class="token keyword">float</span> tx<span class="token punctuation">,</span> <span class="token keyword">float</span> ty<span class="token punctuation">,</span> <span class="token keyword">int</span> ts<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    x <span class="token operator">=</span> tx<span class="token punctuation">;</span>
+    y <span class="token operator">=</span> ty<span class="token punctuation">;</span>
+    size <span class="token operator">=</span> ts<span class="token punctuation">;</span>
+ <span class="token punctuation">&#125;</span>
+
+  <span class="token keyword">void</span> <span class="token function">update</span><span class="token punctuation">(</span><span class="token keyword">int</span> mx<span class="token punctuation">,</span> <span class="token keyword">int</span> my<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    angle <span class="token operator">=</span> <span class="token function">atan2</span><span class="token punctuation">(</span>my<span class="token operator">-</span>y<span class="token punctuation">,</span> mx<span class="token operator">-</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+
+  <span class="token keyword">void</span> <span class="token function">display</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token function">pushMatrix</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">translate</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//变换整个坐标系的位置</span>
+    <span class="token function">fill</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">strokeWeight</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">ellipse</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> size<span class="token punctuation">,</span> size<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">rotate</span><span class="token punctuation">(</span>angle<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">fill</span><span class="token punctuation">(</span><span class="token number">31</span><span class="token punctuation">,</span> <span class="token number">197</span><span class="token punctuation">,</span><span class="token number">255</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">ellipse</span><span class="token punctuation">(</span>size<span class="token operator">/</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> size<span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">,</span> size<span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">popMatrix</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<hr>
+<p>You can visit <a target="_blank" rel="noopener" href="https://github.com/zjudesign/processingCat">github page</a> of this project, or download all the file used in this article.👇</p>
+<p>Google Drive <a target="_blank" rel="noopener" href="https://drive.google.com/file/d/14Ye_sks8MK4DCYYcPwPZ4TzFjfBEH6SK/view?usp=sharing">Download Link</a></p>
+
+  <p> — Nov 1, 2022</p>
+  
+
+
+        </div>
+        <div class="row mt-2">
+  <h3>Search</h3>
+  <div><input id="search-text" title="search" class="search-text" type="text" placeholder="search......"></div>
+  <div style="margin-top: 1.5rem;">
+    <ul id="result"></ul>
+  </div>
+</div>
+        <div class="row mt-2">
+  
+    <div class="eight columns">
+      <p id="madewith">Made with ❤ and
+        <a class="footer-link icon" href="https://hexo.io" target="_blank" style="text-decoration: none;" rel="noreferrer" aria-label="Hexo.io">
+        <svg class="hexo svg-hov" width="14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Hexo.js</title><path d="M12 .007L1.57 6.056V18.05L12 23.995l10.43-6.049V5.952L12 .007zm4.798 17.105l-.939.521-.939-.521V12.94H9.08v4.172l-.94.521-.938-.521V6.89l.939-.521.939.521v4.172h5.84V6.89l.94-.521.938.521v10.222z"/></svg>
+        </a>
+        
+        at <a href="https://design.zju.edu.cn" target="_blank" rel="noreferrer">ZJU</a>.</p>
+        
+    </div>
+
+    <!-- Sepcial thanks to https://simpleicons.org/ for the icons -->
+    <div class="four columns mb-3 posisi" >
+      
+      <a class="ml-0 footer-link icon" href="https://github.com/zjudesign" target="_blank" style="text-decoration: none" rel="noreferrer" aria-label="GitHub">
+        <svg class="github svg-hov" width="18" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+      </a>
+      
+
+      
+
+      
+
+      
+
+      
+
+    </div>
+  
+</div>
+
+      </div>
+
+    </div>
+
+  </div>
+  <script src="js/nanobar.min.js"></script>
+
+  <script>
+    var options = {
+      classname: 'nanobar',
+      id: 'myNanobar'
+    };
+    var nanobar = new Nanobar(options);
+    nanobar.go(30);
+    nanobar.go(76);
+    nanobar.go(100);
+  </script>
+
+</body>
+
+</html>
