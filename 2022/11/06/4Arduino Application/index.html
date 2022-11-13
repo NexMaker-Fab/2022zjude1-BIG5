@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <!-- Minima -->
+  <!-- Hexo theme created by @adisaktijrs -->
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+
+  
+  <title>Arduino Application</title>
+  
+  <link rel="canonical" href="https://nexmaker-fab.github.io/2022zjude1-BIG5/2022/11/06/4Arduino%20Application/">
+  
+  <meta name="description" content="About Open Source Hardware “Open hardware,” or “open source hardware,” refers to the design specifications of a physical object which are licensed in ">
+  
+  
+  <meta name="author" content="BIG5">
+  
+  
+  
+  <meta property="og:site_name" content="BIG5" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Arduino Application" />
+  
+  <meta property="og:description" content="About Open Source Hardware “Open hardware,” or “open source hardware,” refers to the design specifications of a physical object which are licensed in ">
+  
+  <meta property="og:url" content="https://nexmaker-fab.github.io/2022zjude1-BIG5/2022/11/06/4Arduino%20Application/" />
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Arduino Application">
+  
+  <meta name="twitter:description" content="About Open Source Hardware “Open hardware,” or “open source hardware,” refers to the design specifications of a physical object which are licensed in ">
+  
+  
+  
+  
+  <meta name="twitter:url" content="https://nexmaker-fab.github.io/2022zjude1-BIG5/2022/11/06/4Arduino%20Application/" />
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Preload fonts
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="preload" href="/fonts/dm-serif-display-v4-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/inter-v2-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  
+<link rel="stylesheet" href="/2022zjude1-BIG5/css/normalize.css">
+
+  
+<link rel="stylesheet" href="/2022zjude1-BIG5/css/skeleton.css">
+
+  
+<link rel="stylesheet" href="/2022zjude1-BIG5/css/custom.css">
+
+  
+<link rel="stylesheet" href="/2022zjude1-BIG5/css/prism-dark.css">
+
+  
+<link rel="stylesheet" href="/2022zjude1-BIG5/css/prism-line-numbers.css">
+
+  <!-- User css -->
+  
+  
+<link rel="stylesheet" href="/2022zjude1-BIG5/css/user.css">
+
+  
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+  <!-- Custom Theme Color Style
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <style>
+  a:not(.icon) {
+    text-decoration-color: #0FA0CE;
+    background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 50%,
+      #0FA0CE 50%
+    );
+  }
+  blockquote {
+    border-left: 8px solid #0FA0CE;
+  }
+  .nanobar .bar {
+    background: #0FA0CE;
+  }
+  .button.button-primary:hover,
+  button.button-primary:hover,
+  input[type="submit"].button-primary:hover,
+  input[type="reset"].button-primary:hover,
+  input[type="button"].button-primary:hover,
+  .button.button-primary:focus,
+  button.button-primary:focus,
+  input[type="submit"].button-primary:focus,
+  input[type="reset"].button-primary:focus,
+  input[type="button"].button-primary:focus {
+    background-color: #0FA0CE;
+    border-color: #0FA0CE;
+  }
+  input[type="email"]:focus,
+  input[type="number"]:focus,
+  input[type="search"]:focus,
+  input[type="text"]:focus,
+  input[type="tel"]:focus,
+  input[type="url"]:focus,
+  input[type="password"]:focus,
+  textarea:focus,
+  select:focus {
+    border: 1px solid #0FA0CE;
+  }
+</style>
+
+  <!-- Google Analytics (With Privacy Settings On)
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  
+
+  
+  <script src="js/pic.min.js" defer></script>
+  
+
+  
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div>
+
+        <div class="row">
+  <div class="two columns" style="max-width: 50px">
+    <h1 class="mt-2 mode">
+      <div onclick=setDarkMode(true) id="darkBtn">🌑</div>
+      <div onclick=setDarkMode(false) id="lightBtn" class=hidden>☀️</div>
+      <script >
+        if (localStorage.getItem('preferredTheme') == 'dark') {
+          setDarkMode(true)
+        }
+        function setDarkMode(isDark) {
+          var darkBtn = document.getElementById('darkBtn')
+          var lightBtn = document.getElementById('lightBtn')
+          if (isDark) {
+            lightBtn.style.display = "block"
+            darkBtn.style.display = "none"
+            localStorage.setItem('preferredTheme', 'dark');
+          } else {
+            lightBtn.style.display = "none"
+            darkBtn.style.display = "block"
+            localStorage.removeItem('preferredTheme');
+          }
+          document.body.classList.toggle("darkmode");
+        }
+      </script>
+    </h1>
+  </div>
+
+  <div class="six columns ml-1">
+    <h1 class="mt-2">
+      Hi, Friends.
+    </h1>
+  </div>
+
+  <div class="twelve columns">
+    <div class="row">
+      <div class="nine columns left">
+        <a href="/2022zjude1-BIG5/">Home</a>
+        
+          
+          <a href="/2022zjude1-BIG5/about" class="ml">About Us</a>
+          
+        
+          
+          <a href="/2022zjude1-BIG5/archives" class="ml">All Works</a>
+          
+        
+          
+          <a href="/2022zjude1-BIG5/final" class="ml">Final Project</a>
+          
+        
+        
+      </div>
+    </div>
+    <hr style="margin-bottom: 2.6rem">
+  </div>
+</div>
+
+        <div class="trans">
+            <h1>Arduino Application</h1>
+
+  <hr>
+<h1 id="About-Open-Source-Hardware"><a href="#About-Open-Source-Hardware" class="headerlink" title="About Open Source Hardware"></a>About Open Source Hardware</h1><p><img src="https://raw.githubusercontent.com/zjudesign/PicGo/main/Untitled.png" alt="Untitled"></p>
+<p>“Open hardware,” or “open source hardware,” refers to the design specifications of a physical object which are licensed in such a way that said object can be studied, modified, created, and distributed by anyone.</p>
+<h1 id="About-Arduino"><a href="#About-Arduino" class="headerlink" title="About Arduino"></a>About Arduino</h1><p><strong>Arduino</strong>(&#x2F;ɑːrˈdwiːnoʊ&#x2F;) is an open-source hardware and software company, project, and user community that designs and manufactures single-board microcontrollers and microcontroller kits for building digital devices.</p>
+<p>Learn more about Arduino and its history, visit <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Single-board_microcontroller#:~:text=References-,Origins,-%5Bedit%5D">Arduino wikipedia</a>.</p>
+<h1 id="About-Arduino-Uno"><a href="#About-Arduino-Uno" class="headerlink" title="About Arduino Uno"></a>About Arduino Uno</h1><p>The Arduino UNO is the best board to get started with electronics and coding. If this is your first experience tinkering with the platform, the UNO is the most robust board you can start playing with. The UNO is the most used and documented board of the whole Arduino family.</p>
+<p>Arduino UNO is a microcontroller board based on the <strong>ATmega328P</strong>. It has 14 digital input&#x2F;output pins (of which 6 can be used as PWM outputs), 6 analog inputs, a 16 MHz ceramic resonator, a USB connection, a power jack, an ICSP header and a reset button. It contains everything needed to support the microcontroller; simply connect it to a computer with a USB cable or power it with a AC-to-DC adapter or battery to get started. You can tinker with your UNO without worrying too much about doing something wrong, worst case scenario you can replace the chip for a few dollars and start over again.</p>
+<p>Here is <a target="_blank" rel="noopener" href="https://docs.arduino.cc/static/432d0508eabb23a6c3eefa324d5957ed/A000066-datasheet.pdf">Arduino Uno docs</a>.</p>
+<p><img src="https://raw.githubusercontent.com/zjudesign/PicGo/main/Untitled%201.png" alt="Untitled"></p>
+<h1 id="Arduino-with-LCD-Screen"><a href="#Arduino-with-LCD-Screen" class="headerlink" title="Arduino with LCD Screen"></a>Arduino with LCD Screen</h1><p>LCD1602, or 1602 character-type liquid crystal display, is a kind of dot matrix module to show letters, numbers, and characters and so on. It’s composed of 5x7 or 5x11 dot matrix positions; each position can display one character. There’s a dot pitch between two characters and a space between lines, thus separating characters and lines. The model 1602 means it displays 2 lines of 16 characters.</p>
+<p><img src="https://raw.githubusercontent.com/zjudesign/PicGo/main/Untitled%202.png" alt="Untitled"></p>
+<p>Pins spec is following.</p>
+<p><img src="https://raw.githubusercontent.com/zjudesign/PicGo/main/Untitled%203.png" alt="Untitled"></p>
+<p>In this section, we will use LCD and Arduino to display some letters and scroll round and round.</p>
+<ol>
+<li>Connect uno and LCD as the following picture. The potentiometer is to tune screen contrast.</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/zjudesign/PicGo/main/Untitled_Sketch_2_bb.jpg" alt="Untitled Sketch 2_bb.jpg"></p>
+<ol start="2">
+<li><p>Install <code>LiquidCrystal Library</code>. Commonly, the lib is installed by default with Arduino IDE. </p>
+</li>
+<li><p>Upload the code below.</p>
+</li>
+</ol>
+<pre class="line-numbers language-arduino" data-language="arduino"><code class="language-arduino"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;LiquidCrystal.h></span></span>
+ 
+<span class="token comment">// 创建lcd控制对象,并指定其引脚与Arduino控制板对应关系</span>
+const <span class="token keyword">int</span> rs<span class="token operator">=</span><span class="token number">12</span><span class="token punctuation">,</span>en<span class="token operator">=</span><span class="token number">11</span><span class="token punctuation">,</span>d4<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">,</span>d5<span class="token operator">=</span><span class="token number">4</span><span class="token punctuation">,</span>d6<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">,</span>d7<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">;</span>
+<span class="token builtin">LiquidCrystal</span> <span class="token function">lcd</span><span class="token punctuation">(</span>rs<span class="token punctuation">,</span>en<span class="token punctuation">,</span>d4<span class="token punctuation">,</span>d5<span class="token punctuation">,</span>d6<span class="token punctuation">,</span>d7<span class="token punctuation">)</span><span class="token punctuation">;</span>
+ 
+<span class="token keyword">void</span> <span class="token keyword">setup</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+  lcd<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token number">16</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  lcd<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"WE ARE BIG FIVE!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+ 
+<span class="token keyword">void</span> <span class="token keyword">loop</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><code>lcd.begin(16,2);</code> is to initializes the interface to the LCD screen, and specifies the dimensions (width and height) of the display. begin() needs to be called before any other LCD library commands.</p>
+<p><code>lcd.print(&quot;WE ARE BIG FIVE!&quot;);</code> is to prints text to the LCD.</p>
+<p><img src="https://raw.githubusercontent.com/zjudesign/PicGo/main/34B30D77-720C-49CC-9C66-FE0DB4CFFF6E_1_201_a.jpg"></p>
+<p><img src="https://raw.githubusercontent.com/zjudesign/PicGo/main/IMG_0603.gif" alt="IMG_0603.gif"></p>
+<ol start="4">
+<li>Then, upload the code blow.</li>
+</ol>
+<pre class="line-numbers language-arduino" data-language="arduino"><code class="language-arduino"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;LiquidCrystal.h></span></span>
+
+<span class="token comment">// 创建lcd控制对象,并指定其引脚与Arduino控制板对应关系</span>
+const <span class="token keyword">int</span> rs <span class="token operator">=</span> <span class="token number">12</span><span class="token punctuation">,</span> en <span class="token operator">=</span> <span class="token number">11</span><span class="token punctuation">,</span> d4 <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">,</span> d5 <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">,</span> d6 <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">,</span> d7 <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+<span class="token builtin">LiquidCrystal</span> <span class="token function">lcd</span><span class="token punctuation">(</span>rs<span class="token punctuation">,</span> en<span class="token punctuation">,</span> d4<span class="token punctuation">,</span> d5<span class="token punctuation">,</span> d6<span class="token punctuation">,</span> d7<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">void</span> <span class="token keyword">setup</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+  <span class="token comment">// lcd初始化,同时设置lcd屏幕的列数和行数(宽和高)</span>
+  lcd<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token number">16</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">//   向LCD打印"hello, world!"</span>
+  lcd<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"WE ARE BIG FIVE!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">void</span> <span class="token keyword">loop</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+  <span class="token comment">//向左滚动15个位置（即字符串长度）</span>
+  <span class="token comment">//将其向屏幕外移动：</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> positionCounter <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> positionCounter <span class="token operator">&lt;</span> <span class="token number">15</span><span class="token punctuation">;</span> positionCounter<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">// 向左滚动一格</span>
+    lcd<span class="token punctuation">.</span><span class="token function">scrollDisplayLeft</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//延时150毫秒</span>
+    <span class="token function">delay</span><span class="token punctuation">(</span><span class="token number">500</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+
+  <span class="token comment">// 向右滚动31个位置（字符串长度15+显示长度16）</span>
+  <span class="token comment">// 向右滚动出屏幕</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> positionCounter <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> positionCounter <span class="token operator">&lt;</span> <span class="token number">31</span><span class="token punctuation">;</span> positionCounter<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">//滚动一格单位</span>
+    lcd<span class="token punctuation">.</span><span class="token function">scrollDisplayRight</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// 些许延时</span>
+    <span class="token function">delay</span><span class="token punctuation">(</span><span class="token number">500</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+
+  <span class="token comment">// 向左滚动15个位置（显示长度）</span>
+  <span class="token comment">// 移动回中心</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> positionCounter <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> positionCounter <span class="token operator">&lt;</span> <span class="token number">15</span><span class="token punctuation">;</span> positionCounter<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">// 向左滚动一格</span>
+    lcd<span class="token punctuation">.</span><span class="token function">scrollDisplayLeft</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// 稍微延迟以更好的显示效果</span>
+    <span class="token function">delay</span><span class="token punctuation">(</span><span class="token number">500</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+
+  <span class="token comment">// 在循环结束时延时</span>
+  <span class="token function">delay</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><code>lcd.scrollDisplayRight();</code> and <code>lcd.scrollDisplayLeft();</code> is to scroll the contents of the display (text and cursor) one space to the left&#x2F;right.</p>
+<p><img src="https://raw.githubusercontent.com/zjudesign/PicGo/main/IMG_0605-2.gif" alt="IMG_0605-2.gif"></p>
+<h1 id="Arduino-with-Input-Sensor"><a href="#Arduino-with-Input-Sensor" class="headerlink" title="Arduino with Input Sensor"></a>Arduino with Input Sensor</h1><p>nothing for now</p>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><ol>
+<li><a target="_blank" rel="noopener" href="https://docs.arduino.cc/hardware/uno-rev3">https://docs.arduino.cc/hardware/uno-rev3</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.taichi-maker.com/homepage/reference-index/arduino-library-index/liquidcrystal-library/">http://www.taichi-maker.com/homepage/reference-index/arduino-library-index/liquidcrystal-library/</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.arduino.cc/reference/en/libraries/liquidcrystal/">https://www.arduino.cc/reference/en/libraries/liquidcrystal/</a></li>
+</ol>
+
+  <p> — Nov 6, 2022</p>
+  
+
+
+        </div>
+        <div class="row mt-2">
+  <h3>Search</h3>
+  <div><input id="search-text" title="search" class="search-text" type="text" placeholder="search......"></div>
+  <div style="margin-top: 1.5rem;">
+    <ul id="result"></ul>
+  </div>
+</div>
+        <div class="row mt-2">
+  
+    <div class="eight columns">
+      <p id="madewith">Made with ❤ and
+        <a class="footer-link icon" href="https://hexo.io" target="_blank" style="text-decoration: none;" rel="noreferrer" aria-label="Hexo.io">
+        <svg class="hexo svg-hov" width="14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Hexo.js</title><path d="M12 .007L1.57 6.056V18.05L12 23.995l10.43-6.049V5.952L12 .007zm4.798 17.105l-.939.521-.939-.521V12.94H9.08v4.172l-.94.521-.938-.521V6.89l.939-.521.939.521v4.172h5.84V6.89l.94-.521.938.521v10.222z"/></svg>
+        </a>
+        
+        at <a href="https://design.zju.edu.cn" target="_blank" rel="noreferrer">ZJU</a>.</p>
+        
+    </div>
+
+    <!-- Sepcial thanks to https://simpleicons.org/ for the icons -->
+    <div class="four columns mb-3 posisi" >
+      
+      <a class="ml-0 footer-link icon" href="https://github.com/zjudesign" target="_blank" style="text-decoration: none" rel="noreferrer" aria-label="GitHub">
+        <svg class="github svg-hov" width="18" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+      </a>
+      
+
+      
+
+      
+
+      
+
+      
+
+    </div>
+  
+</div>
+
+      </div>
+
+    </div>
+
+  </div>
+  <script src="js/nanobar.min.js"></script>
+
+  <script>
+    var options = {
+      classname: 'nanobar',
+      id: 'myNanobar'
+    };
+    var nanobar = new Nanobar(options);
+    nanobar.go(30);
+    nanobar.go(76);
+    nanobar.go(100);
+  </script>
+
+</body>
+
+</html>
