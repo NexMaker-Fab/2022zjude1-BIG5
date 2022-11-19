@@ -389,8 +389,15 @@
 <p>Google Drive <a target="_blank" rel="noopener" href="https://drive.google.com/file/d/14Ye_sks8MK4DCYYcPwPZ4TzFjfBEH6SK/view?usp=sharing">Download Link</a></p>
 </blockquote>
 <hr>
-<h1 id="Fly-me-to-the-moon"><a href="#Fly-me-to-the-moon" class="headerlink" title="Fly me to the moon"></a>Fly me to the moon</h1><h2 id="Communication-between-Processing-and-Arduino"><a href="#Communication-between-Processing-and-Arduino" class="headerlink" title="Communication between Processing and Arduino"></a>Communication between Processing and Arduino</h2><p><img src="https://raw.githubusercontent.com/zjudesign/PicGo/main/IMG_0640.JPEG" alt="IMG_0640"></p>
-<p>Arduino code👇</p>
+<h1 id="Fly-me-to-the-moon"><a href="#Fly-me-to-the-moon" class="headerlink" title="Fly me to the moon"></a>Fly me to the moon</h1><h2 id="Communication-between-Processing-and-Arduino"><a href="#Communication-between-Processing-and-Arduino" class="headerlink" title="Communication between Processing and Arduino"></a>Communication between Processing and Arduino</h2><p><img src="https://raw.githubusercontent.com/zjudesign/PicGo/main/IMG_0638.gif" alt="IMG_0638"></p>
+<p><img src="https://raw.githubusercontent.com/zjudesign/PicGo/main/IMG_0637.gif" alt="IMG_0637"></p>
+<p>In this section, we will use ultrasonic sensor to detect distance between human body and computer, then communicate with processing through serial interface.</p>
+<p>This project is inspired by <a target="_blank" rel="noopener" href="https://www.arduino.cc/education/visualization-with-arduino-and-processing">this project</a>, and we’ve modified it to achieve our goal.</p>
+<p>We used three ultrasonic sensors in this project in case of robustness, and we would use the nearest distance number of three.</p>
+<p>The wire connection is  as following.</p>
+<p><img src="https://raw.githubusercontent.com/zjudesign/PicGo/main/IMG_0640.JPEG" alt="IMG_0640"></p>
+<p><img src="https://raw.githubusercontent.com/zjudesign/PicGo/main/arduino2.jpg" alt="arduino2"></p>
+<p>The Arduino code is quite easy. Arduino code👇</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">int</span> trigPin1 <span class="token operator">=</span> <span class="token number">11</span><span class="token punctuation">;</span>    <span class="token comment">//Trig</span>
 <span class="token keyword">int</span> echoPin1 <span class="token operator">=</span> <span class="token number">12</span><span class="token punctuation">;</span>    <span class="token comment">//Echo</span>
 <span class="token keyword">int</span> trigPin2 <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>    <span class="token comment">//Trig</span>
@@ -519,7 +526,11 @@
 
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p><img src="https://raw.githubusercontent.com/zjudesign/PicGo/main/IMG_0638.gif" alt="IMG_0638"><img src="https://raw.githubusercontent.com/zjudesign/PicGo/main/IMG_0637.gif" alt="IMG_0637"></p>
+<p><img src="https://raw.githubusercontent.com/zjudesign/PicGo/main/IMG_0637.gif" alt="IMG_0637"></p>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><ol>
+<li><a target="_blank" rel="noopener" href="https://www.arduino.cc/education/visualization-with-arduino-and-processing">https://www.arduino.cc/education/visualization-with-arduino-and-processing</a></li>
+<li><a target="_blank" rel="noopener" href="https://b23.tv/ESxZ1wf">https://b23.tv/ESxZ1wf</a></li>
+</ol>
 
   <p> — Nov 1, 2022</p>
   

@@ -293,11 +293,89 @@ const <span class="token keyword">int</span> rs <span class="token operator">=</
 
 <p><code>lcd.scrollDisplayRight();</code> and <code>lcd.scrollDisplayLeft();</code> is to scroll the contents of the display (text and cursor) one space to the left&#x2F;right.</p>
 <p><img src="https://raw.githubusercontent.com/zjudesign/PicGo/main/IMG_0605-2.gif" alt="IMG_0605-2.gif"></p>
-<h1 id="Arduino-with-Input-Sensor"><a href="#Arduino-with-Input-Sensor" class="headerlink" title="Arduino with Input Sensor"></a>Arduino with Input Sensor</h1><p>nothing for now</p>
-<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><ol>
+<h1 id="Arduino-with-Input-Sensor"><a href="#Arduino-with-Input-Sensor" class="headerlink" title="Arduino with Input Sensor"></a>Arduino with Input Sensor</h1><p><strong>DHT11 Temp&amp;Humidity sensor</strong></p>
+<p><img src="https://raw.githubusercontent.com/zjudesign/PicGo/main/IMG_0679.jpg" alt="IMG_0679"></p>
+<p>This project uses DHT sensor to detect temperature and humidity, you can visit this site to learn more about this sensor. </p>
+<p><img src="https://raw.githubusercontent.com/zjudesign/PicGo/main/Untitled%204.png" alt="Untitled 4"></p>
+<p>And before upload the code, you need to install the <a target="_blank" rel="noopener" href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjjs_6j57n7AhUsFrcAHWlvB7gQFnoECAMQAQ&url=https://www.arduino.cc/reference/en/libraries/dht-sensor-library/&usg=AOvVaw3XaK42R3CCf1hLKE-juWn7">DHT library</a>. In this project, <strong>the LCD wires connection are the same as above</strong>, only to attach the DHT pin as:  <code>VCC→5V</code>, <code>DATA→pin9</code>, <code>GND→GND</code>.</p>
+<pre class="line-numbers language-arduino" data-language="arduino"><code class="language-arduino"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;LiquidCrystal.h></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">"DHT.h"</span></span>
+
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">DHTTYPE</span> <span class="token expression">DHT11</span></span>
+ 
+<span class="token comment">// 创建lcd控制对象,并指定其引脚与Arduino控制板对应关系</span>
+const <span class="token keyword">int</span> rs<span class="token operator">=</span><span class="token number">12</span><span class="token punctuation">,</span>en<span class="token operator">=</span><span class="token number">11</span><span class="token punctuation">,</span>d4<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">,</span>d5<span class="token operator">=</span><span class="token number">4</span><span class="token punctuation">,</span>d6<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">,</span>d7<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">;</span>
+<span class="token builtin">LiquidCrystal</span> <span class="token function">lcd</span><span class="token punctuation">(</span>rs<span class="token punctuation">,</span>en<span class="token punctuation">,</span>d4<span class="token punctuation">,</span>d5<span class="token punctuation">,</span>d6<span class="token punctuation">,</span>d7<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+const <span class="token keyword">int</span> DHTPIN <span class="token operator">=</span> <span class="token number">9</span><span class="token punctuation">;</span>
+
+DHT <span class="token function">dht</span><span class="token punctuation">(</span>DHTPIN<span class="token punctuation">,</span> DHTTYPE<span class="token punctuation">)</span><span class="token punctuation">;</span>
+ 
+<span class="token keyword">void</span> <span class="token keyword">setup</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+  lcd<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token number">16</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//  lcd.print("DHT11");</span>
+  <span class="token function">delay</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  lcd<span class="token punctuation">.</span><span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token builtin">Serial</span><span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token number">9600</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//  Serial.println(F("DHTxx test!"));</span>
+
+  dht<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+ 
+<span class="token keyword">void</span> <span class="token keyword">loop</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">// Wait a few seconds between measurements.</span>
+  <span class="token function">delay</span><span class="token punctuation">(</span><span class="token number">2000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// Reading temperature or humidity takes about 250 milliseconds!</span>
+  <span class="token comment">// Sensor readings may also be up to 2 seconds 'old' (its a very slow sensor)</span>
+  float h <span class="token operator">=</span> dht<span class="token punctuation">.</span><span class="token function">readHumidity</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">// Read temperature as Celsius (the default)</span>
+  float t <span class="token operator">=</span> dht<span class="token punctuation">.</span><span class="token function">readTemperature</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">// Read temperature as Fahrenheit (isFahrenheit = true)</span>
+  float f <span class="token operator">=</span> dht<span class="token punctuation">.</span><span class="token function">readTemperature</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// Check if any reads failed and exit early (to try again).</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isnan</span><span class="token punctuation">(</span>h<span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token function">isnan</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token function">isnan</span><span class="token punctuation">(</span>f<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token builtin">Serial</span><span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token function">F</span><span class="token punctuation">(</span><span class="token string">"Failed to read from DHT sensor!"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+
+  <span class="token comment">// Compute heat index in Fahrenheit (the default)</span>
+  float hif <span class="token operator">=</span> dht<span class="token punctuation">.</span><span class="token function">computeHeatIndex</span><span class="token punctuation">(</span>f<span class="token punctuation">,</span> h<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">// Compute heat index in Celsius (isFahreheit = false)</span>
+  float hic <span class="token operator">=</span> dht<span class="token punctuation">.</span><span class="token function">computeHeatIndex</span><span class="token punctuation">(</span>t<span class="token punctuation">,</span> h<span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  
+  lcd<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"Temp:"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  lcd<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  lcd<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">" C"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  lcd<span class="token punctuation">.</span><span class="token function">setCursor</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  lcd<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"Humi:"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  lcd<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span>h<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  lcd<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"%"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">delay</span><span class="token punctuation">(</span><span class="token number">10000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  lcd<span class="token punctuation">.</span><span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">//  Serial.print(F("Humidity: "));</span>
+<span class="token comment">//  Serial.print(h);</span>
+<span class="token comment">//  Serial.print(F("%  Temperature: "));</span>
+<span class="token comment">//  Serial.print(t);</span>
+<span class="token comment">//  Serial.print(F("°C "));</span>
+<span class="token comment">//  Serial.print(f);</span>
+<span class="token comment">//  Serial.print(F("°F  Heat index: "));</span>
+<span class="token comment">//  Serial.print(hic);</span>
+<span class="token comment">//  Serial.print(F("°C "));</span>
+<span class="token comment">//  Serial.print(hif);</span>
+<span class="token comment">//  Serial.println(F("°F"));</span>
+  
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h1 id=""><a href="#" class="headerlink" title=""></a></h1><h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><ol>
 <li><a target="_blank" rel="noopener" href="https://docs.arduino.cc/hardware/uno-rev3">https://docs.arduino.cc/hardware/uno-rev3</a></li>
 <li><a target="_blank" rel="noopener" href="http://www.taichi-maker.com/homepage/reference-index/arduino-library-index/liquidcrystal-library/">http://www.taichi-maker.com/homepage/reference-index/arduino-library-index/liquidcrystal-library/</a></li>
 <li><a target="_blank" rel="noopener" href="https://www.arduino.cc/reference/en/libraries/liquidcrystal/">https://www.arduino.cc/reference/en/libraries/liquidcrystal/</a></li>
+<li><a target="_blank" rel="noopener" href="https://learn.adafruit.com/dht">https://learn.adafruit.com/dht</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.arduino.cc/reference/en/libraries/dht-sensor-library/">https://www.arduino.cc/reference/en/libraries/dht-sensor-library/</a></li>
 </ol>
 
   <p> — Nov 6, 2022</p>
