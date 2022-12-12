@@ -11,38 +11,34 @@
   <meta charset="utf-8">
 
   
-  <title>BIG5</title>
+  <title>DLC PlatformIO and tinyML</title>
   
-  <link rel="canonical" href="https://nexmaker-fab.github.io/2022zjude1-BIG5/">
+  <link rel="canonical" href="https://nexmaker-fab.github.io/2022zjude1-BIG5/2022/12/12/DLC/">
   
-  <meta name="description" content="">
+  <meta name="description" content="Platform IO PlatformIO 是一个用于物联网开发的开源生态系统。它提供跨平台的开发环境和统一的调试器，还支持远程单元测试和固件更新。 PlatformIO 是独立于平台运行的，实际上它只依赖于 python，然而 python 在 macOS、linux 和 windows 都能完">
   
   
   <meta name="author" content="BIG5">
   
   
-  <meta property="og:image" content="https://nexmaker-fab.github.io/2022zjude1-BIG5images/thumbnail.jpg">
-  
   
   <meta property="og:site_name" content="BIG5" />
   <meta property="og:type" content="article" />
-  <meta property="og:title" content="BIG5" />
+  <meta property="og:title" content="DLC PlatformIO and tinyML" />
   
-  <meta property="og:description" content="">
+  <meta property="og:description" content="Platform IO PlatformIO 是一个用于物联网开发的开源生态系统。它提供跨平台的开发环境和统一的调试器，还支持远程单元测试和固件更新。 PlatformIO 是独立于平台运行的，实际上它只依赖于 python，然而 python 在 macOS、linux 和 windows 都能完">
   
-  <meta property="og:url" content="https://nexmaker-fab.github.io/2022zjude1-BIG5/" />
+  <meta property="og:url" content="https://nexmaker-fab.github.io/2022zjude1-BIG5/2022/12/12/DLC/" />
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="BIG5">
+  <meta name="twitter:title" content="DLC PlatformIO and tinyML">
   
-  <meta name="twitter:description" content="">
-  
-  
-  
-  <meta name="twitter:image" content="https://nexmaker-fab.github.io/2022zjude1-BIG5images/thumbnail.jpg">
+  <meta name="twitter:description" content="Platform IO PlatformIO 是一个用于物联网开发的开源生态系统。它提供跨平台的开发环境和统一的调试器，还支持远程单元测试和固件更新。 PlatformIO 是独立于平台运行的，实际上它只依赖于 python，然而 python 在 macOS、linux 和 windows 都能完">
   
   
-  <meta name="twitter:url" content="https://nexmaker-fab.github.io/2022zjude1-BIG5/" />
+  
+  
+  <meta name="twitter:url" content="https://nexmaker-fab.github.io/2022zjude1-BIG5/2022/12/12/DLC/" />
 
   <!-- Mobile Specific Metas
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -199,90 +195,33 @@
 </div>
 
         <div class="trans">
-          <div class="row">
-  <div class="column">
-    <!-- Main information, edit it on theme/_config.yml -->
-    <h2 class="mb-2">This is Team BIG5</h2>
-    <p>A design team from ZJU</p>
-    <p>This team is formed by 5 industrial design engineering graduate students 2022 from ZJU CST. Based in Ningbo.</p>
-  </div>
-</div>
+            <h1>DLC PlatformIO and tinyML</h1>
 
-<h3>Recent Works</h3>
+  <hr>
+<h1 id="Platform-IO"><a href="#Platform-IO" class="headerlink" title="Platform IO"></a>Platform IO</h1><p><img src="https://insigh.io/wp-content/uploads/2021/04/structure_project_compilable_Arduino_IDE_PlatformIO_transp-1024x480.png" alt="How to structure a project to be compilable by Arduino IDE and PlatformIO -  Part 2 - insigh.io"></p>
+<p><strong>PlatformIO</strong> 是一个用于物联网开发的开源生态系统。它提供跨平台的开发环境和统一的调试器，还支持远程单元测试和固件更新。</p>
+<p>PlatformIO 是独立于平台运行的，实际上它只依赖于 python，然而 python 在 macOS、linux 和 windows 都能完美适配. 也就是说 PlatformIO 的工程从一个电脑很容易迁移到另一个电脑，只需要拷贝再使用 PlatformIO 就能完美打开，不管团队中的成员使用什么操作系统 PlatformIO 可以让工程共享变得异常简单. 除此之外, PlatformIO 不仅可以在笔记本和台式机上运行，同样可以运行在没有显示桌面的服务器。PlatformIO 的核心(PlatformIO Core) 就是一个终端程序, 它能配合您喜欢的多款云 IDE、桌面 IDE 或者 通用代码编辑器构建 PlatformIO 的 IDE，比如 Atom, CLion, Eclipse, Emacs, NetBeans, Qt Creator, Sublime Text, VIM, Visual Studio, VSCode 等等。</p>
+<p>目前官方推荐的 IDE 使用方案就是 VSCode + PlatformIO IDE 插件。</p>
+<p>相比于Arduino IDE，PlatformIO的编译速度会快很多，而且支持自动补全。对于使用tiny ML和Arduino_GFX的程序来说，Arduinno IDE编译速度是极慢的，往往需要十几分钟。而Platform IO只需要几分钟。</p>
+<p>当然PlatformIO的安装可能需要一些时间，并没有Arduino IDE那样开箱即用。PlatformIO如何安装可以参考<a target="_blank" rel="noopener" href="https://huajishe.com/archives/post-624.html">这篇</a>文章。</p>
+<p><img src="https://files.seeedstudio.com/wiki/platformIO/platformIO.gif" alt="PlatformIO - Seeed Wiki"></p>
+<h1 id="tinyML"><a href="#tinyML" class="headerlink" title="tinyML"></a>tinyML</h1><p><img src="https://constatic.geekbang.org/infoq/5f963c9c5e7ce.png?imageView2/0/w/800" alt="img"></p>
+<p>TinyML 是机器学习和嵌入式 IoT 设备的交叉领域，是一门新兴的工程学科，具有革新许多行业的潜力。机器学习正处于一个交叉路口，两种计算范式齐头并进，即以计算为中心的计算，和以数据为中心的计算。在以计算为中心的计算范式下，数据是在数据中心的实例上存储和分析的；而在以数据为中心的计算范式下，处理是在数据的原始位置执行的。尽管在目前，以计算为中心的计算范式似乎很快会达到上限，但是以数据为中心的计算范式才刚刚起步。</p>
+<p>当前，物联网设备和嵌入式机器学习模型日益普及。预计到 2020 年底，将有超过 200 亿台活跃设备。人们可能并未注意到其中许多设备，例如智能门铃、智能恒温器，以及只要用户说话甚至拿起就可以“唤醒”的智能手机。</p>
+<p>对于tinyML，我们推荐《TinyML：基于TensorFlow Lite在Arduino和超低功耗微控制器上部署机器学习》这本书。同时介绍tinyML平台：Edge Impluse，一个可以快速部署机器学习模型的平台。<img src="https://1.bp.blogspot.com/-h4rxcATnPWY/YVCxbltbgTI/AAAAAAAAExI/cx8jwEBdmswyQQ8ZyN_jVMR8ESAJGjWogCLcBGAsYHQ/s1658/iThome_Day_12_Fig_01.jpg" alt="iT 邦幫忙::一起幫忙解決難題，拯救IT 人的一天"></p>
+<p><img src="https://www.st.com/content/dam/PartnerProgram/Edge%20Impulse/Image%20Edge%20Impulse%20screenshot-studio%20STP.png" alt="Edge Impulse SW Development Tool - create the next generation of  intelligent device solutions with embedded machine learning -  STMicroelectronics"></p>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><ol>
+<li><a target="_blank" rel="noopener" href="https://www.eet-china.com/mp/a101805.html">老宇哥带你玩转ESP32：02使用VSCode+PlatformIO搭建开发环境</a></li>
+<li><a target="_blank" rel="noopener" href="https://huajishe.com/archives/post-624.html">保姆级教程之PlatformIO使用ESP32在Arduino框架点亮TFT屏幕</a></li>
+<li><a target="_blank" rel="noopener" href="https://dronebotworkshop.com/platformio/">Getting Started with PlatformIO</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.infoq.cn/article/ihfwg4lc9gem349nsek7">TinyML：下一轮人工智能革命</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.tensorflow.org/lite/microcontrollers?hl=zh-cn">https://www.tensorflow.org/lite/microcontrollers?hl=zh-cn</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.edgeimpulse.com/">https://www.edgeimpulse.com/</a></li>
+</ol>
 
+  <p> — Dec 12, 2022</p>
+  
 
-<div class="row">
-
-  <div class="three columns left lit">
-    <p class="bottom">Dec 12, 2022</p>
-  </div>
-  <div class="nine columns left mb-3">
-    <a href="/2022zjude1-BIG5/2022/12/12/DLC/" >
-      
-        DLC PlatformIO and tinyML
-      
-    </a>
-  </div>
-</div>
-
-<div class="row">
-
-  <div class="three columns left lit">
-    <p class="bottom">Nov 6, 2022</p>
-  </div>
-  <div class="nine columns left mb-3">
-    <a href="/2022zjude1-BIG5/2022/11/06/4Arduino%20Application/" >
-      
-        Arduino Application
-      
-    </a>
-  </div>
-</div>
-
-<div class="row">
-
-  <div class="three columns left lit">
-    <p class="bottom">Nov 1, 2022</p>
-  </div>
-  <div class="nine columns left mb-3">
-    <a href="/2022zjude1-BIG5/2022/11/01/3IAP/" >
-      
-        Interface Application Programming
-      
-    </a>
-  </div>
-</div>
-
-<div class="row">
-
-  <div class="three columns left lit">
-    <p class="bottom">Oct 8, 2022</p>
-  </div>
-  <div class="nine columns left mb-3">
-    <a href="/2022zjude1-BIG5/2022/10/08/2CAD%20Design/" >
-      
-        CAD
-      
-    </a>
-  </div>
-</div>
-
-<div class="row">
-
-  <div class="three columns left lit">
-    <p class="bottom">Sep 22, 2022</p>
-  </div>
-  <div class="nine columns left mb-3">
-    <a href="/2022zjude1-BIG5/2022/09/22/1Project%20Management/" >
-      
-        Project Management
-      
-    </a>
-  </div>
-</div>
-
-
-<h4> <a href="/2022zjude1-BIG5/archives">all works</a></h4>
 
         </div>
         <div class="row mt-2">
