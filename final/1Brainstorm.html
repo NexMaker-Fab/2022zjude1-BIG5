@@ -198,29 +198,36 @@
             <h1>Final project brainstorm</h1>
 
   <hr>
-<h1 id="sEMG-based-arm-band-for-children-exercise-counting"><a href="#sEMG-based-arm-band-for-children-exercise-counting" class="headerlink" title="sEMG based arm band for children exercise counting"></a>sEMG based arm band for children exercise counting</h1><h2 id="BrainStorming"><a href="#BrainStorming" class="headerlink" title="BrainStorming"></a>BrainStorming</h2><p>我们小组经过讨论，最后确定的Final project的项目为基于表面肌电信号的儿童训练臂环。</p>
-<p>基本功能有：</p>
+<h1 id="sEMG-based-arm-band-for-children-exercise-counting"><a href="#sEMG-based-arm-band-for-children-exercise-counting" class="headerlink" title="sEMG based arm band for children exercise counting"></a><del>sEMG based arm band for children exercise counting</del></h1><h1 id="E-motion-exercise-counting-and-training-guide"><a href="#E-motion-exercise-counting-and-training-guide" class="headerlink" title="E-motion: exercise counting and training guide"></a>E-motion: exercise counting and training guide</h1><h2 id="BrainStorming"><a href="#BrainStorming" class="headerlink" title="BrainStorming"></a>BrainStorming</h2><p><del>我们小组经过讨论，Final project的项目为基于表面肌电信号的儿童训练臂环。</del></p>
+<p><del>基本功能有：</del></p>
 <ul>
-<li>肌电信号识别哑铃训练次数</li>
-<li>NFC任务卡片识别</li>
-<li>灯带显示任务进度</li>
+<li><del>肌电信号识别哑铃训练次数</del></li>
+<li><del>NFC任务卡片识别</del></li>
+<li><del>灯带显示任务进度</del></li>
 </ul>
-<p>使用流程为：根据训练进度选择相应的任务卡片，例如<code>哑铃-10次</code>→插入设备→开始训练→灯带显示进度&#x2F;语音鼓励→训练完成</p>
-<p>使用到的模块or零件为（暂定）:</p>
+<p><del>使用流程为：根据训练进度选择相应的任务卡片，例如<code>哑铃-10次</code>→插入设备→开始训练→灯带显示进度&#x2F;语音鼓励→训练完成</del></p>
+<p><del>使用到的模块or零件为（暂定）:</del></p>
 <ul>
-<li>主控芯片（暂定）：<a target="_blank" rel="noopener" href="https://www.espressif.com/sites/default/files/documentation/esp32-pico-d4_datasheet_en.pdf">ESP32-pico-D4</a></li>
-<li>RFID芯片：<a target="_blank" rel="noopener" href="https://www.nxp.com/docs/en/data-sheet/MFRC522.pdf">RC522</a></li>
-<li>sEMG信号放大：<a target="_blank" rel="noopener" href="https://www.analog.com/media/en/technical-documentation/data-sheets/AD620.pdf">AD620</a></li>
-<li>1w扬声器</li>
-<li>功放芯片：8002</li>
-<li>充电芯片：tp4056X</li>
-<li>tf卡模块</li>
-<li>LED灯带</li>
-<li>电池</li>
+<li><del>主控芯片（暂定）：<a target="_blank" rel="noopener" href="https://www.espressif.com/sites/default/files/documentation/esp32-pico-d4_datasheet_en.pdf">ESP32-pico-D4</a></del></li>
+<li><del>RFID芯片：<a target="_blank" rel="noopener" href="https://www.nxp.com/docs/en/data-sheet/MFRC522.pdf">RC522</a></del></li>
+<li><del>sEMG信号放大：<a target="_blank" rel="noopener" href="https://www.analog.com/media/en/technical-documentation/data-sheets/AD620.pdf">AD620</a></del></li>
+<li><del>1w扬声器</del></li>
+<li><del>功放芯片：8002</del></li>
+<li><del>充电芯片：tp4056X</del></li>
+<li><del>tf卡模块</del></li>
+<li><del>LED灯带</del></li>
+<li><del>电池</del></li>
 </ul>
-<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FEsJLnSo3hCpT1oDjGIAEJc%2F1116%25E8%25AE%25A8%25E8%25AE%25BA%3Fnode-id%3D0%253A1%26t%3DWVIbdxU2dwfXOh8O-1" allowfullscreen></iframe>
-
-<h2 id="reference"><a href="#reference" class="headerlink" title="reference"></a>reference</h2><ol>
+<h2 id="计划有变"><a href="#计划有变" class="headerlink" title="计划有变"></a>计划有变</h2><p>当我们以肌电信号作为主要技术进行接下来的开发与设计时，我们发现：</p>
+<ol>
+<li>肌电信号太容易受到其他信号干扰，论文基本都是要求实验者按照一定方式放松，酒精处理皮肤后贴上导电片才能获得较好的信号</li>
+<li>电极贴片必须紧贴皮肤，当肌肉运动幅度过大，贴片容易脱落导致数据错误</li>
+<li>对于不同人，或者是同一人同一肌肉不同的位置，肌电信号都有不同程度的差异，不容易进行处理</li>
+<li>对于不同的运动方式，需要在不同的肌肉群设置贴片</li>
+<li>对于儿童，此方式并不合适</li>
+</ol>
+<p>总之，由于肌电信号鲁棒性太差，且并不适合儿童群体，我们决定只使用陀螺仪数据。陀螺仪数据相对于肌电信号数据，没有了其他信号干扰问题，同时不需要紧贴皮肤，也能更方便的应用于不同的运动形式，数据模型容易分辨，鲁棒性较好。</p>
+<h2 id="最后的最后方案"><a href="#最后的最后方案" class="headerlink" title="最后的最后方案"></a>最后的最后方案</h2><h2 id="reference"><a href="#reference" class="headerlink" title="reference"></a>reference</h2><ol>
 <li><a target="_blank" rel="noopener" href="https://oshwhub.com/zheng-jiu-shi-jie/wu-xian-ke-chuan-dai-shi-biao-mian-ji-dian-xin-hao-cai-ji-yu-jian-ce-ji-tong">https://oshwhub.com/zheng-jiu-shi-jie/wu-xian-ke-chuan-dai-shi-biao-mian-ji-dian-xin-hao-cai-ji-yu-jian-ce-ji-tong</a></li>
 <li><a target="_blank" rel="noopener" href="https://oshwhub.com/lihooo/rc522-demo">https://oshwhub.com/lihooo/rc522-demo</a></li>
 </ol>

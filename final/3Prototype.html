@@ -198,10 +198,26 @@
             <h1>Final project prototype</h1>
 
   <hr>
-<h2 id="Dev-board"><a href="#Dev-board" class="headerlink" title="Dev board"></a>Dev board</h2><p>We have designed a dev board for data collecting and demo presenting.<br><img src="https://raw.githubusercontent.com/zjudesign/PicGo/main/image-20221214162718270.png" alt="image-20221214162715815"></p>
-<h2 id="Data-collecting"><a href="#Data-collecting" class="headerlink" title="Data collecting"></a>Data collecting</h2><p>We use Edge Impulse to train our IMU data.</p>
+<h2 id="1-Dev-board"><a href="#1-Dev-board" class="headerlink" title="1. Dev board"></a>1. Dev board</h2><p>我们制作了一个开发板用来收集数据与原型开发。主要包括：</p>
+<ol>
+<li>ESP32</li>
+<li>陀螺仪</li>
+<li>1.28英寸圆形屏幕，GC9A01驱动</li>
+<li>电池与充电模块</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/zjudesign/PicGo/main/image-20221214162718270.png" alt="image-20221214162715815"></p>
+<p>同时我们还制作了3D打印的外壳。</p>
+<img src="https://raw.githubusercontent.com/zjudesign/PicGo/main/image-20221214214906541.png" style="zoom:50%;" />
+
+
+
+<h2 id="2-Data-collecting"><a href="#2-Data-collecting" class="headerlink" title="2. Data collecting"></a>2. Data collecting</h2><p>由于我们使用Edge Impulse训练我们的数据，所以我们需要将陀螺仪数据通过串口按照特定的形式打印出来，保存为csv文件。具体要求和Arduino示例代码可以参阅<a target="_blank" rel="noopener" href="https://docs.edgeimpulse.com/docs/edge-impulse-cli/cli-data-forwarder#example-arduino">官方文档</a>。我们设计了data collecting的代码，当通过串口发送1000、2000或者3000时，开发板可以收集相应数量的数据。</p>
 <p><img src="https://raw.githubusercontent.com/zjudesign/PicGo/main/wqokm-0xhmr.gif" alt="wqokm-0xhmr"></p>
-<h2 id="Machine-Learning"><a href="#Machine-Learning" class="headerlink" title="Machine Learning"></a>Machine Learning</h2><h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2>
+<p>当数据上传之后，可以查看数据是否正确。下图为哑铃训练时的陀螺仪数据。</p>
+<p><img src="https://raw.githubusercontent.com/zjudesign/PicGo/main/image-20221215012643219.png" alt="image-20221215012643219"></p>
+<p>现在数据较少，模型很容易训练，但面对陌生数据的正确率会偏低。之后我们需要请组员与志愿者们进行不同训练项目的数据收集。</p>
+<p>由于疫情，数据收集暂缓。</p>
+<h2 id="3-Machine-Learning"><a href="#3-Machine-Learning" class="headerlink" title="3. Machine Learning"></a>3. Machine Learning</h2><h3 id="3-1-数据预处理"><a href="#3-1-数据预处理" class="headerlink" title="3.1 数据预处理"></a>3.1 数据预处理</h3><h3 id="3-2-训练"><a href="#3-2-训练" class="headerlink" title="3.2 训练"></a>3.2 训练</h3><h3 id="3-3-部署"><a href="#3-3-部署" class="headerlink" title="3.3 部署"></a>3.3 部署</h3><h2 id="4-Code"><a href="#4-Code" class="headerlink" title="4. Code"></a>4. Code</h2>
 
         </div>
         <div class="row mt-2">
