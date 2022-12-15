@@ -227,7 +227,18 @@
 <li>对于儿童，此方式并不合适</li>
 </ol>
 <p>总之，由于肌电信号鲁棒性太差，且并不适合儿童群体，我们决定只使用陀螺仪数据。陀螺仪数据相对于肌电信号数据，没有了其他信号干扰问题，同时不需要紧贴皮肤，也能更方便的应用于不同的运动形式，数据模型容易分辨，鲁棒性较好。</p>
-<h2 id="最后的最后方案"><a href="#最后的最后方案" class="headerlink" title="最后的最后方案"></a>最后的最后方案</h2><h2 id="reference"><a href="#reference" class="headerlink" title="reference"></a>reference</h2><ol>
+<h2 id="最后的最后方案"><a href="#最后的最后方案" class="headerlink" title="最后的最后方案"></a>最后的最后方案</h2><p>最后我们决定，剔除肌电信号，只依靠陀螺仪数据进行设计。将智能部分单独设计成一个感知模块，感知模块可以添加绑带绑在身体上，或者嵌入其他运动器械上。例如可以嵌入哑铃、跳绳、拉力机中。</p>
+<p>同时可以在手机上设定训练目标，当目标训练数量达成后，模块会通过震动反馈给用户。</p>
+<p>使用到的模块或传感器、零件为：</p>
+<ul>
+<li>ESP32</li>
+<li>MPU6050</li>
+<li>1.28’ 圆形屏幕</li>
+<li>tp4056</li>
+<li>锂电池</li>
+<li>微型震动马达</li>
+</ul>
+<h2 id="reference"><a href="#reference" class="headerlink" title="reference"></a>reference</h2><ol>
 <li><a target="_blank" rel="noopener" href="https://oshwhub.com/zheng-jiu-shi-jie/wu-xian-ke-chuan-dai-shi-biao-mian-ji-dian-xin-hao-cai-ji-yu-jian-ce-ji-tong">https://oshwhub.com/zheng-jiu-shi-jie/wu-xian-ke-chuan-dai-shi-biao-mian-ji-dian-xin-hao-cai-ji-yu-jian-ce-ji-tong</a></li>
 <li><a target="_blank" rel="noopener" href="https://oshwhub.com/lihooo/rc522-demo">https://oshwhub.com/lihooo/rc522-demo</a></li>
 </ol>
