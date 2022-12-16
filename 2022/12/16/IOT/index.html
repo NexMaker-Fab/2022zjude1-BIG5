@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <!-- Minima -->
+  <!-- Hexo theme created by @adisaktijrs -->
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+
+  
+  <title>IOT Internet of Things</title>
+  
+  <link rel="canonical" href="https://nexmaker-fab.github.io/2022zjude1-BIG5/2022/12/16/IOT/">
+  
+  <meta name="description" content="IOT 开发板关于物联网开发板，主要指有WiFi与蓝牙功能的开发板。虽然部分开发板并没有Wifi功能，也可以增加WiFi模块来实现联网功能。市面上主要有Arduino 我、esp8266、esp32、树莓派、树莓派zero w等。 现在比较常见的就是乐鑫的esp32系列，例如小米的智能插座，就使用的">
+  
+  
+  <meta name="author" content="BIG5">
+  
+  
+  
+  <meta property="og:site_name" content="BIG5" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="IOT Internet of Things" />
+  
+  <meta property="og:description" content="IOT 开发板关于物联网开发板，主要指有WiFi与蓝牙功能的开发板。虽然部分开发板并没有Wifi功能，也可以增加WiFi模块来实现联网功能。市面上主要有Arduino 我、esp8266、esp32、树莓派、树莓派zero w等。 现在比较常见的就是乐鑫的esp32系列，例如小米的智能插座，就使用的">
+  
+  <meta property="og:url" content="https://nexmaker-fab.github.io/2022zjude1-BIG5/2022/12/16/IOT/" />
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="IOT Internet of Things">
+  
+  <meta name="twitter:description" content="IOT 开发板关于物联网开发板，主要指有WiFi与蓝牙功能的开发板。虽然部分开发板并没有Wifi功能，也可以增加WiFi模块来实现联网功能。市面上主要有Arduino 我、esp8266、esp32、树莓派、树莓派zero w等。 现在比较常见的就是乐鑫的esp32系列，例如小米的智能插座，就使用的">
+  
+  
+  
+  
+  <meta name="twitter:url" content="https://nexmaker-fab.github.io/2022zjude1-BIG5/2022/12/16/IOT/" />
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Preload fonts
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="preload" href="/fonts/dm-serif-display-v4-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/inter-v2-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  
+<link rel="stylesheet" href="/2022zjude1-BIG5/css/normalize.css">
+
+  
+<link rel="stylesheet" href="/2022zjude1-BIG5/css/skeleton.css">
+
+  
+<link rel="stylesheet" href="/2022zjude1-BIG5/css/custom.css">
+
+  
+<link rel="stylesheet" href="/2022zjude1-BIG5/css/prism-dark.css">
+
+  
+<link rel="stylesheet" href="/2022zjude1-BIG5/css/prism-line-numbers.css">
+
+  <!-- User css -->
+  
+  
+<link rel="stylesheet" href="/2022zjude1-BIG5/css/user.css">
+
+  
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+  <!-- Custom Theme Color Style
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <style>
+  a:not(.icon) {
+    text-decoration-color: #0FA0CE;
+    background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 50%,
+      #0FA0CE 50%
+    );
+  }
+  blockquote {
+    border-left: 8px solid #0FA0CE;
+  }
+  .nanobar .bar {
+    background: #0FA0CE;
+  }
+  .button.button-primary:hover,
+  button.button-primary:hover,
+  input[type="submit"].button-primary:hover,
+  input[type="reset"].button-primary:hover,
+  input[type="button"].button-primary:hover,
+  .button.button-primary:focus,
+  button.button-primary:focus,
+  input[type="submit"].button-primary:focus,
+  input[type="reset"].button-primary:focus,
+  input[type="button"].button-primary:focus {
+    background-color: #0FA0CE;
+    border-color: #0FA0CE;
+  }
+  input[type="email"]:focus,
+  input[type="number"]:focus,
+  input[type="search"]:focus,
+  input[type="text"]:focus,
+  input[type="tel"]:focus,
+  input[type="url"]:focus,
+  input[type="password"]:focus,
+  textarea:focus,
+  select:focus {
+    border: 1px solid #0FA0CE;
+  }
+</style>
+
+  <!-- Google Analytics (With Privacy Settings On)
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  
+
+  
+  <script src="js/pic.min.js" defer></script>
+  
+
+  
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div>
+
+        <div class="row">
+  <div class="two columns" style="max-width: 50px">
+    <h1 class="mt-2 mode">
+      <div onclick=setDarkMode(true) id="darkBtn">🌑</div>
+      <div onclick=setDarkMode(false) id="lightBtn" class=hidden>☀️</div>
+      <script >
+        if (localStorage.getItem('preferredTheme') == 'dark') {
+          setDarkMode(true)
+        }
+        function setDarkMode(isDark) {
+          var darkBtn = document.getElementById('darkBtn')
+          var lightBtn = document.getElementById('lightBtn')
+          if (isDark) {
+            lightBtn.style.display = "block"
+            darkBtn.style.display = "none"
+            localStorage.setItem('preferredTheme', 'dark');
+          } else {
+            lightBtn.style.display = "none"
+            darkBtn.style.display = "block"
+            localStorage.removeItem('preferredTheme');
+          }
+          document.body.classList.toggle("darkmode");
+        }
+      </script>
+    </h1>
+  </div>
+
+  <div class="six columns ml-1">
+    <h1 class="mt-2">
+      Hi, Friends.
+    </h1>
+  </div>
+
+  <div class="twelve columns">
+    <div class="row">
+      <div class="nine columns left">
+        <a href="/2022zjude1-BIG5/">Home</a>
+        
+          
+          <a href="/2022zjude1-BIG5/about" class="ml">About Us</a>
+          
+        
+          
+          <a href="/2022zjude1-BIG5/archives" class="ml">All Works</a>
+          
+        
+          
+          <a href="/2022zjude1-BIG5/final" class="ml">Final Project</a>
+          
+        
+        
+      </div>
+    </div>
+    <hr style="margin-bottom: 2.6rem">
+  </div>
+</div>
+
+        <div class="trans">
+            <h1>IOT Internet of Things</h1>
+
+  <h2 id="IOT-开发板"><a href="#IOT-开发板" class="headerlink" title="IOT 开发板"></a>IOT 开发板</h2><p>关于物联网开发板，主要指有WiFi与蓝牙功能的开发板。虽然部分开发板并没有Wifi功能，也可以增加WiFi模块来实现联网功能。市面上主要有Arduino 我、esp8266、esp32、树莓派、树莓派zero w等。</p>
+<p>现在比较常见的就是<a target="_blank" rel="noopener" href="https://www.espressif.com/zh-hans">乐鑫</a>的esp32系列，例如小米的智能插座，就使用的乐鑫的esp32方案。</p>
+<p><img src="https://hashstudioz.com/blog/wp-content/uploads/2020/12/Top-10-Development-Boards.png" alt="Top IoT Development Boards &amp; Steps To Select The Right"></p>
+<h2 id="物联网平台"><a href="#物联网平台" class="headerlink" title="物联网平台"></a>物联网平台</h2><p>Arduino现在已经推出官方的云平台Arduino IOT cloud，国内也有比如阿里云IOT、腾讯云等平台。</p>
+<p><img src="https://docs.arduino.cc/static/50fc235c379d32b824769ca21649f526/29114/cloud-widgets.png" alt="IoT Cloud Dashboards &amp; Widgets | Arduino Documentation | Arduino  Documentation"></p>
+<h2 id="阿里云IOT上传数据"><a href="#阿里云IOT上传数据" class="headerlink" title="阿里云IOT上传数据"></a>阿里云IOT上传数据</h2><p>首先我们需要安装依赖库。</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;ArduinoJson.h></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;aliyun_mqtt.h></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;WiFi.h></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p><code>ArduinoJson</code>用来解析云端数据，mqtt包括与aliyun数据传输的函数。<code>WiFi.h</code>为自带库。</p>
+<p>注意在使用platformIO编译时，可能会出现依赖问题。如下图。</p>
+<p><img src="https://raw.githubusercontent.com/zjudesign/PicGo/main/image-20221216214935728.png" alt="image-20221216214935728"></p>
+<p>在安装<code>aliyun_mqtt</code>库时，也会安装<code>Crypto</code>与<code>PubSubClient</code>库，如果没有，可以自行安装。如果相关依赖缺失，可以先查找是否是没有安装相关依赖，如果没有搜到相关依赖库，可以在Google搜索，搜索后我们发现，<code>hwcrypto/aes.h</code>是ESP-IDF默认的库，可能是版本问题，在esp官方GitHub中并没有发现，在<a target="_blank" rel="noopener" href="https://github.com/pycom/esp-idf-2.0/blob/master/components/esp32/include/hwcrypto/aes.h">其他fork</a>中发现该依赖。我们可以下载代码，将ase.h文件拷贝到platformIO项目的依赖文件夹中。</p>
+<p><img src="https://raw.githubusercontent.com/zjudesign/PicGo/main/image-20221216215855237.png" alt="image-20221216215855237"></p>
+<p>编译通过。</p>
+<p><img src="https://raw.githubusercontent.com/zjudesign/PicGo/main/image-20221216215932476.png" alt="image-20221216215932476"></p>
+<p>在阿里云中，我们需要新建一个实例，具体操作可以参考<a target="_blank" rel="noopener" href="https://www.nexmaker.com/doc/9IOT/NodeMCUESP8266_ALiYun.html">nexmaker网站教程</a>。在获得相关密钥后，复制粘贴到下列代码中。</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">PRODUCT_KEY</span> <span class="token string">"x"</span>                        <span class="token comment">// 1.exchange  PRODUCT_KEY</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">DEVICE_NAME</span> <span class="token string">"x"</span>                              <span class="token comment">// 2.exchange  DEVICE_NAME</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">DEVICE_SECRET</span> <span class="token string">"x"</span> <span class="token comment">// 3.exchange DEVICE_SECRET</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">WIFI_SSID</span> <span class="token string">"x"</span>                             <span class="token comment">// 4.exchange WIFI</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">WIFI_PASSWD</span> <span class="token string">"x"</span>                          <span class="token comment">// 5.exchange WIFI password</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">ALINK_BODY_FORMAT</span> <span class="token string">"&#123;\"id\":\"%u\",\"version\":\"1.0\",\"method\":\"%s\",\"params\":%s&#125;"</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">ALINK_TOPIC_PROP_POST</span> <span class="token string">"/sys/"</span> <span class="token expression">PRODUCT_KEY </span><span class="token string">"/"</span> <span class="token expression">DEVICE_NAME </span><span class="token string">"/thing/event/property/post"</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">ALINK_TOPIC_PROP_SET</span> <span class="token string">"/sys/"</span> <span class="token expression">PRODUCT_KEY </span><span class="token string">"/"</span> <span class="token expression">DEVICE_NAME </span><span class="token string">"/thing/service/property/set"</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">ALINK_METHOD_PROP_POST</span> <span class="token string">"thing.event.property.post"</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>现在我们需要将数据上传到云端。下列是上传函数</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">mqttPublish</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>mqttClient<span class="token punctuation">.</span><span class="token function">connected</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token punctuation">&#123;</span>
+    <span class="token comment">//先拼接出json字符串</span>
+    <span class="token keyword">char</span> param<span class="token punctuation">[</span><span class="token number">32</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">char</span> jsonBuf<span class="token punctuation">[</span><span class="token number">128</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token function">sprintf</span><span class="token punctuation">(</span>param<span class="token punctuation">,</span> <span class="token string">"&#123;\"Counting\":%d&#125;"</span><span class="token punctuation">,</span> n<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//我们把要上传的数据写在param里</span>
+    postMsgId <span class="token operator">+=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token function">sprintf</span><span class="token punctuation">(</span>jsonBuf<span class="token punctuation">,</span> ALINK_BODY_FORMAT<span class="token punctuation">,</span> postMsgId<span class="token punctuation">,</span> ALINK_METHOD_PROP_POST<span class="token punctuation">,</span> param<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//再从mqtt客户端中发布post消息</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>mqttClient<span class="token punctuation">.</span><span class="token function">publish</span><span class="token punctuation">(</span>ALINK_TOPIC_PROP_POST<span class="token punctuation">,</span> jsonBuf<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#123;</span>
+      Serial<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"Post message to cloud: "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      Serial<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>jsonBuf<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">else</span>
+    <span class="token punctuation">&#123;</span>
+      Serial<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Publish message to cloud failed!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>注意，在第八行的<code>sprintf(param, &quot;&#123;\&quot;Counting\&quot;:%d&#125;&quot;, n);</code>的<code>Counting</code>，需要是你在功能定义中的标识符。在这里，我们先将运动计数上传。</p>
+<p><img src="https://raw.githubusercontent.com/zjudesign/PicGo/main/image-20221216220624054.png" alt="image-20221216220624054"></p>
+<p>引入库与函数后，在setup函数中，我们用<code>WiFi.begin(WIFI_SSID, WIFI_PASSWD)</code>连接wifi，用<code>connectAliyunMQTT(mqttClient, PRODUCT_KEY, DEVICE_NAME, DEVICE_SECRET)</code>连接阿里云。</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c">WiFiClient espClient<span class="token punctuation">;</span>               <span class="token comment">//创建网络连接客户端</span>
+PubSubClient <span class="token function">mqttClient</span><span class="token punctuation">(</span>espClient<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//通过网络客户端连接创建mqtt连接客户端</span>
+<span class="token keyword">void</span> <span class="token function">setup</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+
+    WiFi<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span>WIFI_SSID<span class="token punctuation">,</span> WIFI_PASSWD<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>WiFi<span class="token punctuation">.</span><span class="token function">status</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">!=</span> WL_CONNECTED<span class="token punctuation">)</span>
+    <span class="token punctuation">&#123;</span>
+        <span class="token function">delay</span><span class="token punctuation">(</span><span class="token number">500</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    Serial<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>WiFi<span class="token punctuation">.</span><span class="token function">localIP</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">connectAliyunMQTT</span><span class="token punctuation">(</span>mqttClient<span class="token punctuation">,</span> PRODUCT_KEY<span class="token punctuation">,</span> DEVICE_NAME<span class="token punctuation">,</span> DEVICE_SECRET<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#123;</span>
+      Serial<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"aliyun connected"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>在loop函数中，我们用训练好的模型生成预测结果，如果分数大于阈值，则count+1，并将其上传到云端。</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">loop</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+
+    <span class="token class-name">ei_impulse_result_t</span> result <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token number">0</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+    <span class="token function">prediction</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>result<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">size_t</span> ix <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> ix <span class="token operator">&lt;</span> EI_CLASSIFIER_LABEL_COUNT<span class="token punctuation">;</span> ix<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>result<span class="token punctuation">.</span>classification<span class="token punctuation">[</span>ix<span class="token punctuation">]</span><span class="token punctuation">.</span>value <span class="token operator">></span> threshold<span class="token punctuation">)</span>
+        <span class="token punctuation">&#123;</span>
+            String label <span class="token operator">=</span> result<span class="token punctuation">.</span>classification<span class="token punctuation">[</span>ix<span class="token punctuation">]</span><span class="token punctuation">.</span>label<span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>result<span class="token punctuation">.</span>classification<span class="token punctuation">[</span>ix<span class="token punctuation">]</span><span class="token punctuation">.</span>label <span class="token operator">==</span> <span class="token string">"rest"</span><span class="token punctuation">)</span>
+            <span class="token punctuation">&#123;</span>
+                trainmode <span class="token operator">=</span> <span class="token string">"Rest"</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+            <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>trainmode <span class="token operator">==</span> <span class="token string">"None"</span><span class="token punctuation">)</span>
+            <span class="token punctuation">&#123;</span>
+                trainmode <span class="token operator">=</span> result<span class="token punctuation">.</span>classification<span class="token punctuation">[</span>ix<span class="token punctuation">]</span><span class="token punctuation">.</span>label<span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+            <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>label <span class="token operator">==</span> trainmode<span class="token punctuation">)</span>
+            <span class="token punctuation">&#123;</span>
+                allcount<span class="token punctuation">[</span>ix<span class="token punctuation">]</span> <span class="token operator">=</span> allcount<span class="token punctuation">[</span>ix<span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+                trainmodecount <span class="token operator">=</span> trainmodecount <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+                <span class="token function">mqttPublish</span><span class="token punctuation">(</span>trainmodecount<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//将计数上传云端</span>
+            <span class="token punctuation">&#125;</span>
+            <span class="token keyword">else</span>
+            <span class="token punctuation">&#123;</span>
+                allcount<span class="token punctuation">[</span>ix<span class="token punctuation">]</span> <span class="token operator">=</span> allcount<span class="token punctuation">[</span>ix<span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">size_t</span> ix <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> ix <span class="token operator">&lt;</span> EI_CLASSIFIER_LABEL_COUNT<span class="token punctuation">;</span> ix<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>allcount<span class="token punctuation">[</span>ix<span class="token punctuation">]</span> <span class="token operator">></span> <span class="token number">3</span><span class="token punctuation">)</span>
+        <span class="token punctuation">&#123;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>trainmode <span class="token operator">!=</span> result<span class="token punctuation">.</span>classification<span class="token punctuation">[</span>ix<span class="token punctuation">]</span><span class="token punctuation">.</span>label<span class="token punctuation">)</span>
+            <span class="token punctuation">&#123;</span>
+                trainmode <span class="token operator">=</span> result<span class="token punctuation">.</span>classification<span class="token punctuation">[</span>ix<span class="token punctuation">]</span><span class="token punctuation">.</span>label<span class="token punctuation">;</span>
+                trainmodecount <span class="token operator">=</span> allcount<span class="token punctuation">[</span>ix<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+
+    mqttClient<span class="token punctuation">.</span><span class="token function">loop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="https://raw.githubusercontent.com/zjudesign/PicGo/main/image-20221216221819885.png" alt="image-20221216221819885"></p>
+<h2 id="云端控制"><a href="#云端控制" class="headerlink" title="云端控制"></a>云端控制</h2><p>TBA</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
+<li><p><a target="_blank" rel="noopener" href="https://dev.iot.aliyun.com/demo/detail/748891">https://dev.iot.aliyun.com/demo/detail/748891</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/f0d46324a2c6">https://www.jianshu.com/p/f0d46324a2c6</a></p>
+</li>
+</ol>
+
+  <p> — Dec 16, 2022</p>
+  
+
+
+        </div>
+        <div class="row mt-2">
+  <h3>Search</h3>
+  <div><input id="search-text" title="search" class="search-text" type="text" placeholder="search......"></div>
+  <div style="margin-top: 1.5rem;">
+    <ul id="result"></ul>
+  </div>
+</div>
+        <div class="row mt-2">
+  
+    <div class="eight columns">
+      <p id="madewith">Made with ❤ and
+        <a class="footer-link icon" href="https://hexo.io" target="_blank" style="text-decoration: none;" rel="noreferrer" aria-label="Hexo.io">
+        <svg class="hexo svg-hov" width="14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Hexo.js</title><path d="M12 .007L1.57 6.056V18.05L12 23.995l10.43-6.049V5.952L12 .007zm4.798 17.105l-.939.521-.939-.521V12.94H9.08v4.172l-.94.521-.938-.521V6.89l.939-.521.939.521v4.172h5.84V6.89l.94-.521.938.521v10.222z"/></svg>
+        </a>
+        
+        at <a href="https://design.zju.edu.cn" target="_blank" rel="noreferrer">ZJU</a>.</p>
+        
+    </div>
+
+    <!-- Sepcial thanks to https://simpleicons.org/ for the icons -->
+    <div class="four columns mb-3 posisi" >
+      
+      <a class="ml-0 footer-link icon" href="https://github.com/zjudesign" target="_blank" style="text-decoration: none" rel="noreferrer" aria-label="GitHub">
+        <svg class="github svg-hov" width="18" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+      </a>
+      
+
+      
+
+      
+
+      
+
+      
+
+    </div>
+  
+</div>
+
+      </div>
+
+    </div>
+
+  </div>
+  <script src="js/nanobar.min.js"></script>
+
+  <script>
+    var options = {
+      classname: 'nanobar',
+      id: 'myNanobar'
+    };
+    var nanobar = new Nanobar(options);
+    nanobar.go(30);
+    nanobar.go(76);
+    nanobar.go(100);
+  </script>
+
+</body>
+
+</html>
